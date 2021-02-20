@@ -25,12 +25,17 @@ for (let i = 0; i < numeros.length; i++) {
 console.log(`Dobro com FOR : ${dobroFor}`)
 
 // Ordenando Elementos
-    // **Números
+
+// **Números
+
 /* Ordenando de forma crescente. 
 1)Os parametros consistem em o elemento que vai ser comparado com todos os outros(a) e o elemento que esta sendo comparado com a atualmente (b)
+
 2)Para Ordenar de forma descrescente, basta fazer b-a*/
+
 console.log(`Números sem Ordenação Sort(): ${numeros}`)
 console.log(`Números com Ordenação Sort(): ${numeros.sort((a, b) => a - b)}`)
+
 // Também funciona com ordem alfabetica
 console.log(`Sem Ordenação : ${letras}`)
 console.log(`Com Ordenação : ${letras.sort()}`)
@@ -43,3 +48,21 @@ console.log(`Removendo duplicatas com Filter : ${letras2}`)
 
 let copiaLetras = [...letras2]
 console.log(`Copiando com spread operator(...) ${copiaLetras}`)
+
+// Separando letras de números no array
+let misto = ["abelha",9,"coxinha",20,"comeia",30,"mel",20,"galinha"]
+
+// Para as palavras
+let palavras = []
+palavras = misto.filter(a => typeof a == 'string')
+console.log(`arrays de palavras extraidos : ${palavras}`)
+
+// Para os números
+let numerais = []
+numerais = misto.filter(a => typeof a == 'number')
+console.log(`arrays de números extraidos : ${numerais}`)
+
+// Juntando os 2 em um novo array
+let PN = [...palavras,...numerais]
+console.log(`Juntando os arrays de números e palavras de forma ordenada com spread : ${PN}`)
+
